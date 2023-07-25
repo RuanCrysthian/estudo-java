@@ -8,9 +8,9 @@ Repositório destinado à exercícios de Java para estudo de conceitos básicos.
     - [X]  Lista Encadeada Circular
     - [X]  Lista Duplamente Encadeada
   - [X] Pilha
-  - [ ] Fila
+  - [X] Fila
     - [X] Fila Simples
-    - [ ] Fila de Prioridade  
+    - [X] Fila de Prioridade  
   - [ ] Árvores
   - [ ] Tabelas Hash
 - [ ] Princípios Solid 
