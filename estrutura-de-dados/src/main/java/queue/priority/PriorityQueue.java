@@ -1,13 +1,11 @@
-package Queue.Singly;
+package queue.priority;
 
-public class Queue {
+public class PriorityQueue {
     private Node first;
-    private Node last;
     private int size;
 
-    public Queue() {
+    public PriorityQueue() {
         this.first = null;
-        this.last = null;
         this.size = 0;
     }
 
@@ -15,25 +13,31 @@ public class Queue {
         return size == 0;
     }
 
-    public void enqueue(int data) {
-        Node newNode = new Node(data);
-        if (isEmpty())
+    public void enqueue(int data, int priority) {
+        Node newNode = new Node(data, priority);
+        if(isEmpty() || priority > first.getPriority()) {
+            newNode.setNext(first);
             first = newNode;
-        else
-            last.setNext(newNode);
-        last = newNode;
+        }
+        else {
+            Node current = first;
+            while(current.getNext() != null && priority <= current.getNext().getPriority())
+                current = current.getNext();
+            newNode.setNext(current.getNext());
+            current.setNext(newNode);
+        }
         size ++;
     }
 
     public void dequeue() {
-        if (isEmpty())
+        if(isEmpty())
             return;
         first = first.getNext();
         size --;
     }
 
     public int front() {
-        if (isEmpty())
+        if(isEmpty())
             throw new IllegalArgumentException("Queue is empty!");
         return first.getData();
     }
@@ -42,7 +46,7 @@ public class Queue {
         return size;
     }
 
-    public void printQueue() {
+    public void printPriorityQueue() {
         Node current = first;
         while (current != null) {
             System.out.print(current.getData() + " <- ");

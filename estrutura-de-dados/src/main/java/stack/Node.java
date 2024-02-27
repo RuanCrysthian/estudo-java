@@ -1,21 +1,16 @@
-package Queue.Priority;
+package stack;
 
 public class Node {
-    private final int data;
-    private final int priority;
+    private int data;
     private Node next;
 
-    public Node(int data, int priority) {
+    public Node(int data) {
         this.data = data;
-        this.priority = priority;
         this.next = null;
     }
 
     public int getData() {
         return data;
-    }
-    public int getPriority() {
-        return priority;
     }
 
     public void setNext(Node next) {

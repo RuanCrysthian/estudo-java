@@ -1,4 +1,4 @@
-package Queue.Priority;
+package queue.priority;
 
 public class Main {
     public static void main(String[] args) {

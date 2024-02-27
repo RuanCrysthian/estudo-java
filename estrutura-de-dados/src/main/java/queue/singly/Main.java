@@ -1,4 +1,4 @@
-package Queue.Singly;
+package queue.singly;
 
 public class Main {
     public static void main(String[] args) {

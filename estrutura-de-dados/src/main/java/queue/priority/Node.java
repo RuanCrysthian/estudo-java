@@ -1,16 +1,21 @@
-package Queue.Singly;
+package queue.priority;
 
 public class Node {
-    private int data;
+    private final int data;
+    private final int priority;
     private Node next;
 
-    public Node(int data) {
+    public Node(int data, int priority) {
         this.data = data;
+        this.priority = priority;
         this.next = null;
     }
 
     public int getData() {
         return data;
+    }
+    public int getPriority() {
+        return priority;
     }
 
     public void setNext(Node next) {
